@@ -1,10 +1,11 @@
 from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
-from .forms import ContactForm, SignUpForm
-from .models import SignUp
+from .forms import ContactForm, SignUpForm, PhotoUploadForm
+from .models import SignUp, Picture
+from django.http import HttpResponse
 
 
 def home(request):
@@ -65,15 +66,47 @@ def contact(request):
     return render(request, "forms.html", context)
 
 
-def form(request):
-    return render(request, "form.html", {})
+@login_required(login_url='/accounts/login/')
+def upload_picture(request, uid=None):
+    """
+    Photo upload / dropzone handler
+    :param request:
+    :param uid: Optional picture UID when re-uploading a file.
+    :return:
+    """
+    form = PhotoUploadForm(request.POST, request.FILES or None)
+    if form.is_valid():
+        pic = request.FILES['file']
+        # [...] Process whatever you do with that file there. I resize it, create thumbnails, etc.
+        # Get an instance of picture model (defined below)
+        picture = ...
+        picture.file = pic
+        picture.save()
+        return HttpResponse('Image upload succeeded.')
+    return HttpResponseBadRequest("Image upload form not valid.")
 
 
-def upload(request):  # for loop used to loop over the upload function..allows for multiple uploads.
-    for count, x in enumerate(request.FILES.getlist("files")):
-        def process(f):
-            with open('/static/img/file_' + str(count), 'wb+') as destination:  # need to fix path to upload correctly.
-                for chunk in f.chunks():
-                    destination.write(chunk)
-        process(x)
-    return HttpResponse("File(s) uploaded!")
+def get_upload_path(instance, filename):
+    """ creates unique-Path & filename for upload """
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % (instance.p_uid, ext)
+    d = datetime.date.today()
+    username = instance.author.username
+
+    # Create the directory structure
+    return os.path.join(
+        'userpics', username, d.strftime('%Y'), d.strftime('%m'), filename
+    )
+
+# def form(request):
+#     return render(request, "form.html", {})
+
+
+# def upload(request):  # for loop used to loop over the upload function..allows for multiple uploads.
+#     for count, x in enumerate(request.FILES.getlist("files")):
+#         def process(f):
+#             with open('/Users/Dana Medhaug/Documents/ProjectsFolder/tinyshare/static_in_env/media_root/file_' + str(count), 'wb+') as destination:  # need to fix path to upload correctly.
+#                 for chunk in f.chunks():
+#                     destination.write(chunk)
+#         process(x)
+#     return HttpResponse("File(s) uploaded!")

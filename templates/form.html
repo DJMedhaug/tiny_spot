@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<form method="post" action="../static/img" enctype="multipart/form-data"> {% csrf_token %}
+<form method="post" action="../static/img/" enctype="multipart/form-data"> {% csrf_token %}
     {{ form|crispy }}
 
     <input type="file" name="files" multiple/>

@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.conf.urls import include, url
+from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 
@@ -12,8 +12,6 @@ urlpatterns = [
     # Django Registration Redux
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^forums/', include('forums.urls', namespace='forums')),
-    url(r'^form/$', 'tiny_app.views.form', name='form'),
-    url(r'^upload/$', 'tiny_app.views.upload', name='upload'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_URL)
 
 # if settings.DEBUG:

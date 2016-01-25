@@ -11,12 +11,42 @@
      
     <!-- Stylesheets -->
     <link href="/static/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/dropzone.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bxslider.css' %}">
     <link rel="stylesheet" href="{% static 'css/brown-yellow.css' %}" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/boxed.css' %}" />
+    <!-- blueimp Gallery styles -->
+    
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
 
     <link rel="shortcut icon" href="/static/img/icons/favicon.ico">
+
+    <script type="text/javascript">
+    
+    Dropzone.autoDiscover = false;
+    $(function() {
+        // Now that the DOM is fully loaded, create the dropzone & configuration options
+        var myDropzone = new Dropzone('#dropzoneForm', {
+            maxFilesize: 3.0,
+            maxFiles: 10,
+            parallelUploads: 1,
+            uploadMultiple: true,
+            autoProcessQueue: true
+        });
+        
+        //  and setup the on success event listeners
+        myDropzone.on("success", function (file) {
+            var value = $("#Files").val();
+            $("#Files").val(value + ';' + responsetext.Url);
+        });
+
+    });
+
+</script>
+
+
+
     
     

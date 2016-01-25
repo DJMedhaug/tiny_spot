@@ -1,8 +1,6 @@
 {% load crispy_forms_tags %}
 
-<form id="post_form" method="post" action=""
-
-      enctype="multipart/form-data">
+<form id="post_form" method="post" action="" enctype="multipart/form-data">
  
     {% csrf_token %}
     {{ form|crispy }}

@@ -9,3 +9,9 @@ class SignUp(models.Model):
 
     def __unicode__(self):
             return self.email
+
+
+class Picture(models.Model):
+    [...]
+    # Original
+    file = models.ImageField(upload_to="/media/")

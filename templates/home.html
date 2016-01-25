@@ -12,59 +12,50 @@
 {% block jumbotron %}
  <!--  :::  HOME SLIDER ::: -->
 <section id="slides" class="BGdark slides2">
-    <ul class="bxslider">
-      <li>
+    
         <img class="img-responsive" src="/static/img/frontslide.jpg" alt="" />
         <div class="symbol">
             <div class="absShape text-center">
                 <h1>Tiny Spot<small>Share your tiny house story.</small></h1>
             </div>
         </div>
-      </li>
-      <li>
-        <img class="img-responsive" src="/static/img/tinyhouse2.jpg" alt="" />
-        <div class="symbol">
-            <div class="absShape text-center">
-                <h1>Tiny Spot<small>Share your tiny house story.</small></h1>
-            </div>
-        </div>
-      </li>
-      <li>
-        <img class="img-responsive" src="/static/img/tinyhouse3.jpg" alt="" />
-        <div class="symbol">
-            <div class="absShape text-center">
-                 <h1>Tiny Spot<small>Share your tiny house story.</small></h1>
-            </div>
-        </div>
-      </li>
-    </ul>
+     
 </section>
 {% endblock %}
+
+
+
 
 
 
 {% block content %}
 
 
- 
+    <form action="~/media/" method="post" enctype="multipart/form-data" class="dropzone" id="dropzoneForm">
+    
+        <div class="fallback">
+            <inputtype="hidden" value="" id="Files" name="Files" />
+            <input type="submit" value="Upload" />
+        </div>
 
-<div class="row vertical-center-row">
-<div class="text-center col-md-4 col-md-offset-4 post_button">
-  <h2 class="submit_text">Submit a Post</h2>
-  <a href="{% url 'form' %}" class="btn btn-primary btn-block" role="button">Post</a>
-</div>
+    </form>
+<div class="container">
+    <div class="col-md-6 col-sm-6 col-xs-12 content-box wow fadeInLeft text-align-center">
+<a class="btn btn-primary" href="#">Submit<span class="glyphicon glyphicon-chevron-right"></span></a>
+
+ </div>
 </div>
 
 <div class="row">
     <div class="col-md-7">
         <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+            <img class="img-responsive" src="/static/img/post1.jpg" alt="">
         </a>
     </div>
     <div class="col-md-5">
-        <h3>Project One</h3>
-        <h4>Subheading</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+        <h3>WHAT A YEAR!</h3>
+        <h5>Thurs, Dec 31st, 2015</h5>
+        <p>Dan and I sincerely hope you all have had great holidays shared with loved ones. We certainly have had our share of cheer, as we attended a string of holiday parties from November until now. We house sat during Thanksgiving week and hosted our own "Danksgiving". We attended Ugly Sweater parties (I won, I might add) and annual family Christmas parties. It's always nice to be amongst a bustling and happy group of those close to you. Not a whole lot has happened on the Pod, but what little progress was made-- was sweet, succulent visual progress. We finished the recycled pallet siding on three of the sides of the Pod! Thankfully, for my sanity mostly, you cannot see the fourth (still naked) wall. </p>
         <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
 </div>
@@ -76,72 +67,18 @@
 <div class="row">
     <div class="col-md-7">
         <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+            <img class="img-responsive" src="/static/img/post2.jpg" alt="">
         </a>
     </div>
     <div class="col-md-5">
-        <h3>Project Two</h3>
-        <h4>Subheading</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
+        <h3>Pallet Siding</h3>
+        <h5>Wed, Dec 16th, 2015</h5>
+        <p>Not only did this give us a good head-start on saving tons of money during the build, but it also helped to keep us grounded. Our society tends to operate on a “use and dispose” ideology which is causing tons of problems for landfills (pun intended) and the environment in general. The most labor intensive aspect of our build was our pallet siding. A few weeks ago we resumed work on our siding and almost finished three of the four walls. We are still debating whether or not to use pallet siding for the back wall. We still need to stain what we've put up but it feels good to have more of it done. 
+</p>
         <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
 </div>
 <!-- /.row -->
-
-<hr>
-
-<!-- Project Three -->
-<div class="row">
-    <div class="col-md-7">
-        <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-        </a>
-    </div>
-    <div class="col-md-5">
-        <h3>Project Three</h3>
-        <h4>Subheading</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-        <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Four -->
-<div class="row">
-
-    <div class="col-md-7">
-        <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-        </a>
-    </div>
-    <div class="col-md-5">
-        <h3>Project Four</h3>
-        <h4>Subheading</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-        <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Five -->
-<div class="row">
-    <div class="col-md-7">
-        <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-        </a>
-    </div>
-    <div class="col-md-5">
-        <h3>Project Five</h3>
-        <h4>Subheading</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
-        <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-
 <hr>
 
 {% endblock %}

@@ -62,6 +62,15 @@ body {
     line-height: 1.4;
 }
 
+.preview img {
+    max-height:50px;
+
+}
+
+
+
+
+
 .navbar-fixed-top  {
     background-image: url("/static/img/squairy_light.png");
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -2668,9 +2677,7 @@ aside.widget ul {
 #slides.slides2 .bx-wrapper {
 	height: 45em;
 }
-#slides.slides2 img {
-	opacity: 0.5;
-}
+
 #slides.slides2 .symbol {
 	margin-top: 8%;
 }
