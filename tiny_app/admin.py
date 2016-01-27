@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .forms import SignUpForm
-from .models import SignUp, Picture
+from .models import SignUp, Picture, Post
 
 
 class SignUpAdmin(admin.ModelAdmin):
@@ -13,3 +13,4 @@ class SignUpAdmin(admin.ModelAdmin):
 
 admin.site.register(SignUp, SignUpAdmin)
 admin.site.register(Picture)
+admin.site.register(Post)

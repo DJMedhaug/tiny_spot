@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import SignUp
+from .models import SignUp, Post
 from django.core import validators
 
 
@@ -54,3 +54,11 @@ class SignUpForm(forms.ModelForm):  # clean methods used to clean data in email 
 class PhotoUploadForm(forms.Form):
     # Keep name to 'file' because that's what Dropzone is using
     file = forms.ImageField(required=True)
+
+
+class PostForm(forms.ModelForm):
+
+    class Meta:
+        model = Post
+        fields = ('title', 'text',)
+

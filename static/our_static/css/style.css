@@ -88,6 +88,30 @@ display: inline-block;
 margin-top: 10px;
 }
 
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #000000;
+}
+
+.date {
+    float: right;
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+.button_post {
+	margin-left:195px;
+	margin-top: 15px;
+}
 
 h1, h2, h3, h4, h5, h6, .navbar-default .navbar-nav li a, .btn, .form-control, .nav-tabs > li > a, .recent-project ul.bxslider li .project-data li strong, .recent-project ul.bxslider li .project-data a.btn, .big, .member-info .meta-data > div, .meta, .meta.counter div, .frame > div .oops, .post-date span, #contact.opt .office span, b.square, b.squareSmall {
 	font-family: 'Roboto Slab', serif;
