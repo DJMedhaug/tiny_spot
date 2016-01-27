@@ -51,7 +51,7 @@ a, a:focus, .prime, a, ul.list-default li:before, .navbar-default .navbar-nav > 
 ----- SECONDARY 
 \ +=+=+=+=+=+=+=+=+=+=+=+=+=+=+= */
 a:hover, .sec, .btn-sec, .stat h4, footer .office span i, .navbar-default .navbar-nav li > .sub-nav li > .sub-nav li > a:before, .copyright a:hover, .recent-project ul.bxslider li .project-data li:hover i, .post-meta li::before, .calltoAction .widget i.opaque, footer .widget .category-post:hover a, .staff .member .info h4:hover, .header-top span i, .stat i, footer.footer2 a:hover, footer.footer2 .copyright ul li a:hover {
-	color: #00A5FF;
+	color: #c0c0c0;
 }
 /* Background SECONDARY */
 .BGsec, .btn-sec, .btn-primary:hover, .navbar-nav li .sub-nav li .sub-nav li .sub-nav li:hover, i.square.BGsec, .promoBox .residential:hover .absShape, .line, .xdsoft_datetimepicker .xdsoft_calendar th, a.top, .smallSlider .bx-wrapper .bx-controls-direction a i, .bx-wrapper .bx-pager.bx-default-pager a.active, .navigation i:hover, .styled .roun, .project-gallery .gallery-heading li:hover img, .styled .round, .item a.zoom i, .square2, .post-media a.zoom i, .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, .image a.zoom, .team .social a:hover, .career .panel-default > .panel-heading h4.active, .bx-wrapper .bx-pager.bx-default-pager a:hover, .boxed section.BGesc {
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6, .navbar-default .navbar-nav li a, .navbar-default .navba
 }
 /* Background Color4 */
 .BGdark, .btn-sec:hover, .breadcrumbs, .team .social i:hover, .btn-dark, .navbar-default .navbar-toggle .icon-bar, a.outline.light:hover, .btn.btn-default.light:hover, .square3, .project-gallery.opt2 .item h6, .boxed section.BGdark, .boxed footer.BGdark {
-	background-color: #C5C3C3;
+	background-color: #6F4221;
 }
 /* use rgba values here */
 .BGdark.opaque, .square3.opaque {

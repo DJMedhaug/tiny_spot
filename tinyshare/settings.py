@@ -26,7 +26,7 @@ SECRET_KEY = 'wzl-+a808rxpq_()m30*g*zsw&hac^we(fbkheuvp$lk@w@cua'
 DEBUG = True
 
 ADMINS = (
-    ('tinyadmin', 'djmedhaug@gmail.com'),
+    ('danamedhaug', 'djmedhaug@gmail.com'),
 )
 
 MANAGERS = ADMINS

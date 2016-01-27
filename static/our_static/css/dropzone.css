@@ -175,8 +175,9 @@
 
 .dropzone {
   min-height: 150px;
+  margin-top: 15px;
   border: 2px solid rgba(0, 0, 0, 0.3);
-  background: white;
+  background-image: url("/static/img/squairy_light.png");
   padding: 20px 20px; }
   .dropzone.dz-clickable {
     cursor: pointer; }

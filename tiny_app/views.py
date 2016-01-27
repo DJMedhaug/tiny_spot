@@ -2,7 +2,6 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-
 from .forms import ContactForm, SignUpForm, PhotoUploadForm
 from .models import SignUp, Picture
 from django.http import HttpResponse
@@ -97,16 +96,3 @@ def get_upload_path(instance, filename):
     return os.path.join(
         'userpics', username, d.strftime('%Y'), d.strftime('%m'), filename
     )
-
-# def form(request):
-#     return render(request, "form.html", {})
-
-
-# def upload(request):  # for loop used to loop over the upload function..allows for multiple uploads.
-#     for count, x in enumerate(request.FILES.getlist("files")):
-#         def process(f):
-#             with open('/Users/Dana Medhaug/Documents/ProjectsFolder/tinyshare/static_in_env/media_root/file_' + str(count), 'wb+') as destination:  # need to fix path to upload correctly.
-#                 for chunk in f.chunks():
-#                     destination.write(chunk)
-#         process(x)
-#     return HttpResponse("File(s) uploaded!")
