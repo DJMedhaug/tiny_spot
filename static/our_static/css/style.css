@@ -132,6 +132,11 @@ margin-top: 10px;
 	margin-top: 5px;
 }
 
+.publish {
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
 h1, h2, h3, h4, h5, h6, .navbar-default .navbar-nav li a, .btn, .form-control, .nav-tabs > li > a, .recent-project ul.bxslider li .project-data li strong, .recent-project ul.bxslider li .project-data a.btn, .big, .member-info .meta-data > div, .meta, .meta.counter div, .frame > div .oops, .post-date span, #contact.opt .office span, b.square, b.squareSmall {
 	font-family: 'Roboto Slab', serif;
 }
