@@ -67,42 +67,9 @@ def contact(request):
     return render(request, "forms.html", context)
 
 
-@login_required(login_url='/accounts/login/')
-def upload_picture(request, uid=None):
-    """
-    Photo upload / dropzone handler
-    :param request:
-    :param uid: Optional picture UID when re-uploading a file.
-    :return:
-    """
-    form = PhotoUploadForm(request.POST, request.FILES or None)
-    if form.is_valid():
-        pic = request.FILES['file']
-        # [...] Process whatever you do with that file there. I resize it, create thumbnails, etc.
-        # Get an instance of picture model (defined below)
-        picture = ...
-        picture.file = pic
-        picture.save()
-        return HttpResponse('Image upload succeeded.')
-    return HttpResponseBadRequest("Image upload form not valid.")
-
-
-def get_upload_path(instance, filename):
-    """ creates unique-Path & filename for upload """
-    ext = filename.split('.')[-1]
-    filename = "%s.%s" % (instance.p_uid, ext)
-    d = datetime.date.today()
-    username = instance.author.username
-
-    # Create the directory structure
-    return os.path.join(
-        'userpics', username, d.strftime('%Y'), d.strftime('%m'), filename
-    )
-
-
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'post_list.html', {'posts': posts})
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'home.html', {'posts': posts})
 
 
 def post_detail(request, pk):
@@ -110,13 +77,13 @@ def post_detail(request, pk):
     return render(request, 'post_detail.html', {'post': post})
 
 
+@login_required
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.published_date = timezone.now()
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
@@ -124,6 +91,7 @@ def post_new(request):
     return render(request, 'post_edit.html', {'form': form})
 
 
+@login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
@@ -137,3 +105,17 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'post_edit.html', {'form': form})
+
+
+@login_required
+def post_remove(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    return redirect('tiny_app.views.post_list')
+
+
+@login_required
+def post_publish(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.publish()
+    return redirect('tiny_app.views.post_detail', pk=pk)

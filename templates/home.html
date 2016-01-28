@@ -30,25 +30,16 @@
 
 {% block content %}
 
-
-<!-- 
-    <form action="/media/" method="post" enctype="multipart/form-data" class="dropzone" id="dropzoneForm">
-    
-        <div class="fallback">
-            <input type="hidden" value="" id="Files" name="Files" />
-            <input type="submit" value="Upload"/>
+ {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
         </div>
-
-    </form>
-
-
-    <div class="col-md-4 wow fadeInLeft">
-<a class="btn btn-primary btn-md drop_btn" href="#">Post Pics<span class="glyphicon glyphicon-chevron-right"></span></a>
-
- </div>
-</div> -->
+    {% endfor %}
  
-
 <div class="row">
     <div class="col-md-7">
         <a href="#">
@@ -83,39 +74,6 @@
 </div>
 <!-- /.row -->
 <hr>
-<!-- Project Two -->
-<div class="row">
-    <div class="col-md-7">
-        <a href="#">
-            <img class="img-responsive" src="/static/img/post2.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-5">
-        <h3>Pallet Siding</h3>
-        <h5>Wed, Dec 16th, 2015</h5>
-        <p>Not only did this give us a good head-start on saving tons of money during the build, but it also helped to keep us grounded. Our society tends to operate on a “use and dispose” ideology which is causing tons of problems for landfills (pun intended) and the environment in general. The most labor intensive aspect of our build was our pallet siding. A few weeks ago we resumed work on our siding and almost finished three of the four walls. We are still debating whether or not to use pallet siding for the back wall. We still need to stain what we've put up but it feels good to have more of it done. 
-</p>
-        <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-<hr>
-<!-- Project Two -->
-<div class="row">
-    <div class="col-md-7">
-        <a href="#">
-            <img class="img-responsive" src="/static/img/post2.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-5">
-        <h3>Pallet Siding</h3>
-        <h5>Wed, Dec 16th, 2015</h5>
-        <p>Not only did this give us a good head-start on saving tons of money during the build, but it also helped to keep us grounded. Our society tends to operate on a “use and dispose” ideology which is causing tons of problems for landfills (pun intended) and the environment in general. The most labor intensive aspect of our build was our pallet siding. A few weeks ago we resumed work on our siding and almost finished three of the four walls. We are still debating whether or not to use pallet siding for the back wall. We still need to stain what we've put up but it feels good to have more of it done. 
-</p>
-        <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-<hr>
+
 {% endblock %}
 

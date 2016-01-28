@@ -31,11 +31,15 @@
             
 
           {% if user.is_authenticated %}
-                    <a class="btn btn-primary button_post" href="{% url 'post_new' %}">Post<span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <a class="btn btn-primary button_post" href="{% url 'post_new' %}">Submit a Post<span class="glyphicon glyphicon-chevron-right"></span></a>
+                    
+                   
         {% endif %}
+        
           <ul class="nav navbar-nav navbar-right">
 
           {% if request.user.is_authenticated %}
+          <li><p class="name">Hello {{ user.username }}</p></li>
             <li><a href="{% url 'auth_logout' %}">Logout</a></li>
             {% else %}
             <li><a href="{% url 'registration_register' %}">Register</a></li>
@@ -43,6 +47,7 @@
             {% endif %}
             <a href="https://twitter.com/tiny_spot"target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
           </ul>
+
 
 
           {% if not request.user.is_authenticated and not "/accounts/login" in request.get_full_path %}
