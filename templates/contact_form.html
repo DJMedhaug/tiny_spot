@@ -1,0 +1,11 @@
+{% load display_form %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+{{ block.super }} - Contact Us!
+{% endblock %}
+
+{% block content %}
+  {% url 'contact' as form_url %}
+  {% form form_url 'Contact Us!' %}
+{% endblock %}

@@ -10,15 +10,15 @@ Description: A default stylesheet for Striking Interior Design Template, Designe
 /* +=+=+=+=+=+=+=+=+=+=+=+=+=+=+= \
   ----- BOXED VERSION BACKGROUND 
   \ +=+=+=+=+=+=+=+=+=+=+=+=+=+=+= */
-body {
-    background-color: #00A5FF !important;
-}
+/*body {
+    background-color: #333 !important;
+}*/
 
 /* === if you want texture, enable this body tag and comment above === */
 /* light: 01, 02, 03.png | Wooden: 04 & 05.png | Dark: 06, 07, 08, 09, 10.png */
 
 /*body {
-    background-image:url(../images/texture/01.png);
+    background-image:url(/static/img/texture/01.png);
     background-repeat:repeat;
     background-position:0 0;
     background-attachment:fixed;
@@ -27,13 +27,12 @@ body {
 
 /* === if you want background image, enable this body tag and comment above === */
 
-/*body {
-    background-image:url(../images/bgimages/boxed-bg.jpg);
-    background-repeat:no-repeat;
+body {
+    background-image:url(/static/img/squairy_light.png);
+    background-repeat:repeat;
     background-position:center;
     background-attachment:fixed;
-    background-size:cover;
-}*/
+}
 
 .boxed {
     display: block;

@@ -15,13 +15,14 @@ class SignUp(models.Model):
 class Picture(models.Model):
     [...]
     # Original
-    file = models.ImageField(upload_to="/media/")
+    file = models.ImageField(upload_to="/Users/danamedhaug/Documents/ProjectsFolder/static_in_env/media_root")
 
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
+    pic = models.ImageField(upload_to='/Users/danamedhaug/Documents/ProjectsFolder/static_in_env/media_root', blank=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(auto_now_add=True)

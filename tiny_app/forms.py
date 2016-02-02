@@ -57,8 +57,7 @@ class PhotoUploadForm(forms.Form):
 
 
 class PostForm(forms.ModelForm):
-    file = forms.ImageField(required=False)
 
     class Meta:
         model = Post
-        fields = ('title', 'text',)
+        fields = ('title', 'text', 'pic')

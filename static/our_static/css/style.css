@@ -48,15 +48,6 @@ Description: A default stylesheet for Striking Interior Design Template, Designe
 	-webkit-font-smoothing: antialiased!important;
 }*/
 
-body {
-	background-image: url("/static/img/pattern2.jpg");    
-	background-repeat: repeat;
-	background-color: #333;
-    min-height: auto;
-}
-
-
-     
 .lead {
     margin-bottom: 80px;
     text-align: center;
@@ -248,7 +239,7 @@ p {
 	line-height: 1.75em;
 }
 .name {
-	margin-top: 10px;
+	margin-top: 13px;
 }
 textarea {
 	min-height: 8em;
@@ -3140,10 +3131,11 @@ h6 {
 }
 }
 /* iPads (landscape) ----------- */
-@media only screen and (min-width: 990px) and (max-width: 1200px) and (orientation: landscape) {
+@media only screen and (min-width: 990px) and (orientation: landscape) {
 html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fieldset, cite, input, select, textarea, button, a, section, article, aside, header, footer, nav {
 	font-size: 13px;
 }
+
 .post-form {
 	margin-top: 45px;
 }
@@ -3278,9 +3270,7 @@ h3 {
 	right: 1em;
 }
 
-footer {
-    display: none;
-}
+
 
 
 .cbp-af-header.header2.cbp-af-header-shrink {
