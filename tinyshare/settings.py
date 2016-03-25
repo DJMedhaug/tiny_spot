@@ -77,7 +77,6 @@ INSTALLED_APPS = (
     # Third Party
     'bootstrap3',
     'crispy_forms',
-    'forums',
     'registration',
     # My Apps
     'tiny_app',

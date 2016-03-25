@@ -56,6 +56,51 @@ Description: A default stylesheet for Striking Interior Design Template, Designe
     line-height: 1.4;
 }
 
+/*Back To Top*/
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(41, 173, 255);
+    background: rgba(41, 173, 255, 0.7);
+    border: 5px solid #fff;
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 11px;
+    top: 10px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#return-to-top:hover {
+    background: rgba(41, 173, 255, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
 .preview img {
     max-height:50px;
 
@@ -63,14 +108,14 @@ Description: A default stylesheet for Striking Interior Design Template, Designe
 
 
 .navbar-fixed-top  {
-    background-image: url("/static/img/squairy_light.png");
+    background-image: url("");
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.35);
 }
 
 .navbar-collapse.collapse.in {
-    background-color: #4D4D4D;
+    background-color: transparent;
     
 }
 
@@ -90,19 +135,21 @@ margin-top: 10px;
 	background-color: #F5F5F5;
     margin-bottom: 70px;
     border-radius: 5px;
-    margin-top:20px;
+    margin-top:120px;
     padding-bottom:15px;
     padding-top:15px;
 }
 
 .post h1 a, .post h1 a:visited {
+	font-family: 'Roboto', sans-serif;
 	text-align:center;
     color: #000000;
 }
 
 .date {
-    float: right;
-    color: #828282;
+	text-align:center;
+	margin-bottom: 10px;
+	color: #828282;
 }
 
 .save {
@@ -129,7 +176,8 @@ margin-top: 10px;
 }
 
 h1, h2, h3, h4, h5, h6, .navbar-default .navbar-nav li a, .btn, .form-control, .nav-tabs > li > a, .recent-project ul.bxslider li .project-data li strong, .recent-project ul.bxslider li .project-data a.btn, .big, .member-info .meta-data > div, .meta, .meta.counter div, .frame > div .oops, .post-date span, #contact.opt .office span, b.square, b.squareSmall {
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Roboto', serif;
+	font-size: 13px;
 }
 input[type="submit"] {
 	font-family: 'FontAwesome', Roboto Slab, Arial;
@@ -193,7 +241,7 @@ ul.nav.navbar-nav {
 }
 
 .post-form {
-	margin-top: 25px;
+	margin-top: 95px;
 }
 .fa-twitter-square {
 	margin-top: 7px;
@@ -218,6 +266,10 @@ ul.nav.navbar-nav {
 }
 
 footer {
+	height:185px;
+	background-color: #F8F8F8;
+	border-top: solid 3px #d4d5d5;
+	border-bottom: solid 3px #d4d5d5; 
     margin: 50px 0;
 }
 
@@ -281,15 +333,16 @@ section {
 .noBG {
 	background-image: none !important;
 }
-.btn {
-	font-size: 1.15em;
-    color:#fff;
-	padding: 0.20em 1em;
-	border: 0;
-	border-radius: 0;
+.btn-primary {
+	background-color:#fff;
+	border: 1px solid #d1d1d1;
+	color: #000;
 }
-.btn:hover, .btn-primary, .btn-sec, .btn-dark, .btn:focus {
-	color: #fff;
+
+.btn:hover,.btn-sec, .btn-dark, .btn:focus {
+	background-color:#ededed;
+	border: 1px solid #d1d1d1;
+	color: #000;
 }
 .btn-sm {
 	font-size: 1em;
@@ -303,10 +356,7 @@ section {
 .btn i {
 	margin: 0 0 0 0.35em;
 }
-button {
-	font-size: 1.08em;
-	margin: 0.15em;
-}
+
 blockquote {
 	font-size: 1.1em;
 }
@@ -652,7 +702,7 @@ i.square.outline, i.squareSmall.outline {
 	opacity: 0.3;
 }
 a.outline, .btn.btn-default {
-	background-color: #d5d5d5;
+	background-color: #fff;
     border-radius: 3px;
     border-width: 1px;
     border: 1px solid #9b9b9b;
@@ -667,7 +717,8 @@ i.square.outline.light:hover, i.squareSmall.outline.light:hover, a.outline.light
 	opacity: 1;
 }
 a.outline:hover, .btn.btn-default:hover {
-	opacity: 1;
+	cursor: pointer;
+	opacity: .6;
 	border-style: solid;
 }
 .headingIcon::before, .headingIcon::after {
@@ -1643,9 +1694,10 @@ span.clicks {
 ----- FOOTER & COYRIGHT 
 \ +=+=+=+=+=+=+=+=+=+=+=+=+=+=+= */
 footer.page-block-large {
-	padding-bottom: 0;
+	padding-bottom: 50px;
 }
 footer h2 {
+	display:none;
 	font-weight: 300;
 	text-transform: capitalize;
 	color: #fff;
@@ -1657,7 +1709,10 @@ footer p, footer span, footer .container li p, footer .widget .category-post .po
 	color: rgba(255, 255, 255, 0.5);
 }
 footer h5, footer h6, footer li a, footer a, footer li:before, footer li a:focus, footer .widget .category-post a, footer.footer2 .copyright ul li a {
-	color: #fff;
+	color: #000;
+}
+.fa-envelope-o:before {
+	color:#000;
 }
 footer h6, footer h5 {
 	margin: 0;
@@ -1710,6 +1765,7 @@ footer ul.social li a:hover {
 	border-color: rgba(255, 255, 255, 0.8);
 }
 footer .widget .category-post {
+	display:none;
 	border-color: rgba(255, 255, 255, 0.2);
 }
 footer .office span a {
@@ -1788,6 +1844,8 @@ footer.footer2 .social a:hover {
 	margin-top: 85px;
 }
 #slides img {
+	border-bottom: 4px solid #494949;
+	border-top: 4px solid #494949;
 	width: 100%;
 	height: auto;
 }
@@ -1797,6 +1855,8 @@ footer.footer2 .social a:hover {
 	z-index: 999;
 }
 #slides h1 {
+	text-shadow: 2px 3px #000;
+	margin-top: -150px;
 	color: #fff;
 	text-transform: uppercase;
 }
@@ -2322,6 +2382,9 @@ ul.sitemap.list-main.bordered li > ul {
   .staff.opt .team:hover .info small, .staff .team .info h5 small {
    font-weight: normal;
   }*/
+#slides h1 {
+	display:none;
+}	
 .header-top span {
 	font-size: 12px;
 	font-weight: bold !important;
@@ -3005,8 +3068,7 @@ a, .navbar-default .navbar-nav li ul li, .navbar-default .navbar-nav li ul li a,
 .navbar-default .navbar-nav .sub-nav li.sub > a:after {
 	content: '\f105';
 	top: 0.5em;
-	right: 1.5em;
-}
+	
 .bx-wrapper .bx-next {
 	right: -1.5em;
 }
@@ -3132,6 +3194,7 @@ h6 {
 }
 /* iPads (landscape) ----------- */
 @media only screen and (min-width: 990px) and (orientation: landscape) {
+
 html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fieldset, cite, input, select, textarea, button, a, section, article, aside, header, footer, nav {
 	font-size: 13px;
 }
@@ -3163,10 +3226,10 @@ h3 {
 	padding: 2.85em 0;
 }
 .page-block-large {
-	padding: 6.5em 0;
+	padding: 12.5em 0;
 }
 .page-block-full {
-	padding: 3.65em;
+	padding: 12.65em;
 }
 .navbar-nav li .sub-nav {
 	top: 8em;
@@ -3182,7 +3245,7 @@ h3 {
 	width: 70%;
 }
 #slides .symbol .absShape {
-	top: 8%;
+	top: 5%;
 	width: 100%;
 	margin-left: 0;
 }
@@ -3292,6 +3355,9 @@ h3 {
 }
 /* iPads (portrait and landscape) ----------- */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+	#slides h1 {
+	display:none;
+}	
 header .container > div {
 	width: 100%;
 }
@@ -3344,7 +3410,7 @@ span.clicks {
 	top: 41.35%;
 }
 #slides {
-	margin-top: 162px;
+	margin-top: 126px;
 }
 #slides .symbol {
 	background-color: rgba(0, 0, 0, 0.7);
@@ -3552,6 +3618,7 @@ html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fie
 }
 }
 @media only screen and (max-width: 996px) {
+
 h1 {
 	font-size: 2.85em;
 }
@@ -3751,7 +3818,7 @@ header .container {
 	opacity: 0.8;
 }
 #slides {
-	margin-top: 162px;
+	margin-top: 126px;
 }
 #owl-recent-project.home {
 	margin-top: 150px;
@@ -3768,6 +3835,8 @@ header .container {
 }
 }
 @media only screen and (min-width: 768px) {
+	
+
 #services-single {
 	overflow: hidden;
 }
@@ -3780,7 +3849,7 @@ header .container {
 	margin-top: -1.5em;
 }
 #slides {
-	margin-top: 125px;
+	margin-top: 101px;
 }
 }
 /* Desktops, Large Screen and laptops ----------- */
@@ -3788,6 +3857,7 @@ header .container {
 html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fieldset, cite, input, select, textarea, button, a, section, article, aside, header, footer, nav {
 	font-size: 12px;
 }
+
 .wow {
 	visibility: visible;
 }
@@ -3813,7 +3883,6 @@ html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fie
 }
 .navbar-default .navbar-toggle {
 	margin-top: -5.65em;
-	margin-right: 1.5em;
 }
 .navbar-collapse {
 	border: none;
@@ -3833,6 +3902,12 @@ html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fie
 .cbp-af-header nav {
 	float: none;
 }
+
+.navbar-form {
+	margin-left: 55px;
+}
+
+
 .navbar {
 	width: 100%;
 }
@@ -3905,7 +3980,6 @@ html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fie
 	line-height: 3em;
 	text-align: center;
 	top: 1.45em;
-	right: 1em;
 }
 #slides {
 	display: none;
@@ -4099,6 +4173,7 @@ footer.footer2 img {
 	float: none;
 	padding: 0;
 }
+
 header .logo a, .cbp-af-header {
 	text-align: center;
 }
@@ -4125,7 +4200,7 @@ header .logo a, .cbp-af-header {
 	margin-top: -1.95em;
 }
 #slides {
-	margin-top: 125px;
+	margin-top: 102px;
 }
 .breadcrumbs {
 	margin-top: 165px;
@@ -4159,6 +4234,8 @@ header.cbp-af-header.header2 {
 }
 }
 @media only screen and (min-width: 320px) and (max-width: 600px) and (orientation: portrait) {
+
+
 h1 {
 	font-size: 2.55em;
 }
@@ -4295,12 +4372,22 @@ footer h2 {
 }
 }
 @media only screen and (min-width: 600px) and (max-width: 699px) {
+	#slides h1 {
+	display:none;
+}
 #owl-recent-project .item {
 	height: 385px;
 }
 }
 /* iPhone 4 & 5 (portrait & landscape)----------- */
 @media only screen and (min-width: 320px) and (max-width: 570px) {
+	.fa-twitter-square {
+	display: none;
+}
+
+#slides h1 {
+	display:none;
+}	
 .frame {
 	padding: 0;
 	margin: 3em 0.35em;
@@ -4314,6 +4401,9 @@ footer h2 {
 }
 }
 @media only screen and (max-width: 480px) {
+	#slides h1 {
+	display:none;
+}	
 .staff .container > div, .staff .container .row > div {
 	width: 100%;
 	float: none;
@@ -4379,6 +4469,7 @@ footer h2 {
 }
 }
 @media only screen and (min-width: 320px) and (max-width: 400px) {
+	
 .post-header > div, .post-content > div {
 	width: 100%;
 	float: none;

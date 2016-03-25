@@ -14,7 +14,6 @@ urlpatterns = [
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
     # Django Registration Redux
     url(r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^forums/', include('forums.urls', namespace='forums')),
     url(r'^$', 'tiny_app.views.post_list', name='post_list'),
     url(r'^post/(?P<pk>[0-9]+)/$', 'tiny_app.views.post_detail', name='post_detail'),
     url(r'^post/new/$', 'tiny_app.views.post_new', name='post_new'),
@@ -25,5 +24,5 @@ urlpatterns = [
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_URL)
 
 # if settings.DEBUG:
-#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL)
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
+#         urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL)
+#         urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)

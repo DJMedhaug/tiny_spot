@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
+from PIL import Image
 
 
 class SignUp(models.Model):
@@ -15,14 +17,14 @@ class SignUp(models.Model):
 class Picture(models.Model):
     [...]
     # Original
-    file = models.ImageField(upload_to="/Users/danamedhaug/Documents/ProjectsFolder/static_in_env/media_root")
+    file = models.ImageField(upload_to='/static/')
 
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
-    pic = models.ImageField(upload_to='/Users/danamedhaug/Documents/ProjectsFolder/static_in_env/media_root', blank=True)
+    pic = models.ImageField(upload_to='/static/', blank=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(auto_now_add=True)

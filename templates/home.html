@@ -3,7 +3,7 @@
 {% load staticfiles %}
 
 
-{% block head_title %}Welcome | {{ block.super }}{% endblock %}
+{% block head_title %}{{ block.super }}{% endblock %}
 
 
 
@@ -13,10 +13,10 @@
  <!--  :::  HOME SLIDER ::: -->
 <section id="slides" class="BGdark slides2">
     
-        <img class="img-responsive" src="/static/img/frontslide.jpg" alt="" />
+        <img class="img-responsive" src="/static/img/mainslide.jpg" alt="" />
         <div class="symbol">
             <div class="absShape text-center">
-                <h1>Tiny Spot<small>A Tiny House community</small></h1>
+                <h1>Tiny Spot<small>A place to talk about tiny House's</small></h1>
             </div>
         </div>
      
@@ -40,7 +40,7 @@
         </div>
     {% endfor %}
  
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-7">
         <a href="#">
             <img class="img-responsive" src="/static/img/post1.jpg" alt="">
@@ -52,13 +52,12 @@
         <p>Dan and I sincerely hope you all have had great holidays shared with loved ones. We certainly have had our share of cheer, as we attended a string of holiday parties from November until now. We house sat during Thanksgiving week and hosted our own "Danksgiving". We attended Ugly Sweater parties (I won, I might add) and annual family Christmas parties. It's always nice to be amongst a bustling and happy group of those close to you. Not a whole lot has happened on the Pod, but what little progress was made-- was sweet, succulent visual progress. We finished the recycled pallet siding on three of the sides of the Pod! Thankfully, for my sanity mostly, you cannot see the fourth (still naked) wall. </p>
         <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
-</div>
+</div> -->
         <!-- /.row -->
 
-<hr>
 
 <!-- Project Two -->
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-7">
         <a href="#">
             <img class="img-responsive" src="/static/img/post2.jpg" alt="">
@@ -71,9 +70,10 @@
 </p>
         <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
-</div>
+</div> -->
 <!-- /.row -->
 <hr>
 
-{% endblock %}
 
+
+{% endblock %}
